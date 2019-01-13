@@ -1,4 +1,4 @@
-# Advanced Database Systems Query Optimization
+# Advanced Database Systems - Query Optimization
 
 ## Project Description
 In this project, we implemented a database system to perform search using file system search and dense index search.
