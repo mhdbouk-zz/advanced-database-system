@@ -17,10 +17,10 @@ If the initialization is set to true (`AdvancedDatabaseSystems.Program.Main line
 3. put the user id
 
 #### Index example
-![Index example](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/6.png)
+![Index example](https://mhdbouk.github.io/advanced-database-system/assets/6.png)
 
 #### File scan example
-![File scan example](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/7.png)
+![File scan example](https://mhdbouk.github.io/advanced-database-system/assets/7.png)
 
 ## Statistics
 Table User has **302,500**
@@ -35,24 +35,24 @@ Index search is faster with **00:00:01:068**.
 The system designed by applying the object-oriented paradigm. We store the model classes in folder `Models` and the repositories that perform all actions to the database (the file system) in folder `Repository`.
 
 ### User Model
-![User Model](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/1.png)
+![User Model](https://mhdbouk.github.io/advanced-database-system/assets/1.png)
 
 ### Address Model
-![Address Model](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/2.png)
+![Address Model](https://mhdbouk.github.io/advanced-database-system/assets/2.png)
 
 ### Dense Index Model
-![Dense Index Model](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/3.png)
+![Dense Index Model](https://mhdbouk.github.io/advanced-database-system/assets/3.png)
 
 ### User repository
 The main method used in the user repository is `GetById`. In this method, we are passing the user Id and search type (file scan / index).
 If the type is file scan, the system will go through all the lines in the user csv file until we found the record. If the type is Index, the system will read the byte offset from the index csv file and return the exact record without looping through all items. 
 We are using StreamReader to seek the offset and to return the string containing the record. Then we convert it to a User model.
 
-![User repository](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/4.png)
+![User repository](https://mhdbouk.github.io/advanced-database-system/assets/4.png)
 
 ### Address Repository
 The main method used in the address repository is `GetByUserId`. In this method, we are passing the user Id and search type (file scan / index).
 If the type is file scan, the system will go through all the lines in the address csv file, if we found the record with the user id, we will add the record to a `List<Address>` and then return all the list of addresses. If the type is Index, the system will read the byte offset from the index csv file and return all record without looping through all items. 
 
-![Address Repository](https://github.com/mhdbouk/advanced-database-system/blob/master/assets/5.png)
+![Address Repository](https://mhdbouk.github.io/advanced-database-system/assets/5.png)
 
